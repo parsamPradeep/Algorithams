@@ -22,8 +22,9 @@ public class JumpSearch {
 	}
 
 	public static void main(String[] args) {
+		// should be sorted array as input array
 		int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-		int key = 71;
+		int key = -71;
 		int step = (int) Math.floor(Math.sqrt(arr.length));
 		 jumpSearch(arr, 0, step, key);
 		
