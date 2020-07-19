@@ -11,25 +11,16 @@ public class BinarySearch {
 				}
 			}
 		}
-
-		int mid = arr.length / 2;
-		for (int i = 0; i < arr.length; i++) {
-
-			if (key < arr[mid]) {
-
-				for (int j = 0; j <= mid; j++) {
-					if (key == arr[j]) {
-						return j;
-					}
-				}
-			} else {
-
-				for (int k = mid; k < arr.length; k++) {
-					if (key == arr[k]) {
-						return k;
-					}
-				}
-			}
+		
+		int l=0, r=arr.length-1;
+		while(l<=r) {
+			int mid = (l+r)/2;
+			if(arr[mid]==key)
+				return mid;
+			if(key<arr[mid]) 
+				r=mid-1;
+			else
+				l=mid+1;
 		}
 		return -1;
 
@@ -37,7 +28,7 @@ public class BinarySearch {
 
 	public static void main(String[] args) {
 		int arr[] = { 7, 4, 3, 2, 5, 6, 1, 8 };
-		int key = 7;
+		int key = 1;
 		int result = binarySearch(arr, key);
 		if (result != -1) {
 			System.out.println("key found at index :" + result);
