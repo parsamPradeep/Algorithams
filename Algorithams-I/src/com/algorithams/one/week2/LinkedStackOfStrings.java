@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class LinkedStackOfStrings {
 	
 	private Node first=null;
-	
+	private int size=0;
 	private class Node {
 		String item;
 		Node next;
@@ -16,10 +16,12 @@ public class LinkedStackOfStrings {
 		first=new Node();
 		first.next=oldfirst;
 		first.item=s;
+		size++;
 	}
 	public String pop() {
 		String item=first.item;
 		first=first.next;
+		size--;
 		return item;
 	}
 	public boolean isEmpty() {
