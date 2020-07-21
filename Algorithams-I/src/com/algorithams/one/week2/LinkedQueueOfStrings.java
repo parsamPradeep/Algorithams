@@ -1,5 +1,7 @@
 package com.algorithams.one.week2;
 
+import java.util.Scanner;
+
 public class LinkedQueueOfStrings {
 	private Node first = null;
 	private int size = 0;
@@ -41,7 +43,15 @@ public class LinkedQueueOfStrings {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		LinkedQueueOfStrings lq=new LinkedQueueOfStrings();
+		Scanner scanner=new Scanner(System.in);
+		while(scanner.hasNext()) {
+			String s=scanner.next();
+			if(s.equals("-"))
+				System.out.println(lq.dequeue());
+			else
+				lq.enqueue(s);
+		}
 
 	}
 
