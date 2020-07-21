@@ -1,16 +1,20 @@
-package com.algorithams.one;
+package com.algorithams.one.week1;
 
 import java.util.Scanner;
 
-public class QuickUnionUF {
-	
+
+public class PathCompressionQuickUnion {
 	private int[] id;
+	private int[] sz;
 	private int count;
-	public QuickUnionUF(int N) {
+
+	public PathCompressionQuickUnion(int N) {
 		id=new int[N];
 		count=N;
-		for(int i=0;i<N;i++)
+		for(int i=0;i<N;i++) {
 			id[i]=i;
+			sz[i]=1;
+		}
 	}
 	public int root(int i) {
 		while (i!=id[i])
@@ -20,7 +24,17 @@ public class QuickUnionUF {
 	public void union(int p, int q) {
 		int i=root(id[p]);
 		int j=root(id[q]);
-		id[i]=j;
+		if(i==j) return;
+		if(sz[i]<sz[j]) {
+			id[i]=j;
+			sz[j]+=sz[i];
+		}
+		else
+		{
+			id[j]=i;
+			sz[i]+=sz[j];
+		}
+		
 	}
 	
 	public boolean connected(int p, int q) {
@@ -35,7 +49,7 @@ public class QuickUnionUF {
 		Scanner sc= new Scanner(System.in);
 		System.out.println("enter the number of nodes");
 		int num=sc.nextInt();
-		QuickUnionUF qf=new QuickUnionUF(num);
+		PathCompressionQuickUnion qf=new PathCompressionQuickUnion(num);
 		System.out.println("Select any one option\n");
 		System.out.println("1. enter the source and destination node to be connected");
 		System.out.println("2. exit");

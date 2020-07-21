@@ -1,14 +1,13 @@
-package com.algorithams.one;
+package com.algorithams.one.week1;
 
 import java.util.Scanner;
 
+public class WeightedQuickUnion {
 
-public class PathCompressionQuickUnion {
 	private int[] id;
 	private int[] sz;
 	private int count;
-
-	public PathCompressionQuickUnion(int N) {
+	public WeightedQuickUnion(int N) {
 		id=new int[N];
 		count=N;
 		for(int i=0;i<N;i++) {
@@ -49,7 +48,7 @@ public class PathCompressionQuickUnion {
 		Scanner sc= new Scanner(System.in);
 		System.out.println("enter the number of nodes");
 		int num=sc.nextInt();
-		PathCompressionQuickUnion qf=new PathCompressionQuickUnion(num);
+		WeightedQuickUnion qf=new WeightedQuickUnion(num);
 		System.out.println("Select any one option\n");
 		System.out.println("1. enter the source and destination node to be connected");
 		System.out.println("2. exit");

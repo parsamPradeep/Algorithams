@@ -1,4 +1,4 @@
-package com.algorithams.one;
+package com.algorithams.one.week1;
 
 import java.util.Scanner;
 

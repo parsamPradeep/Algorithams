@@ -1,19 +1,16 @@
-package com.algorithams.one;
+package com.algorithams.one.week1;
 
 import java.util.Scanner;
 
-public class WeightedQuickUnion {
-
+public class QuickUnionUF {
+	
 	private int[] id;
-	private int[] sz;
 	private int count;
-	public WeightedQuickUnion(int N) {
+	public QuickUnionUF(int N) {
 		id=new int[N];
 		count=N;
-		for(int i=0;i<N;i++) {
+		for(int i=0;i<N;i++)
 			id[i]=i;
-			sz[i]=1;
-		}
 	}
 	public int root(int i) {
 		while (i!=id[i])
@@ -23,17 +20,7 @@ public class WeightedQuickUnion {
 	public void union(int p, int q) {
 		int i=root(id[p]);
 		int j=root(id[q]);
-		if(i==j) return;
-		if(sz[i]<sz[j]) {
-			id[i]=j;
-			sz[j]+=sz[i];
-		}
-		else
-		{
-			id[j]=i;
-			sz[i]+=sz[j];
-		}
-		
+		id[i]=j;
 	}
 	
 	public boolean connected(int p, int q) {
@@ -48,7 +35,7 @@ public class WeightedQuickUnion {
 		Scanner sc= new Scanner(System.in);
 		System.out.println("enter the number of nodes");
 		int num=sc.nextInt();
-		WeightedQuickUnion qf=new WeightedQuickUnion(num);
+		QuickUnionUF qf=new QuickUnionUF(num);
 		System.out.println("Select any one option\n");
 		System.out.println("1. enter the source and destination node to be connected");
 		System.out.println("2. exit");
