@@ -38,3 +38,6 @@ public class LinkedStackOfStrings {
 	}
 
 }
+
+//javac LinkedStackOfStrings.java
+//java LinkedStackOfStrings < file.txt
