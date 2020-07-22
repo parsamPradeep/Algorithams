@@ -1,9 +1,10 @@
 package com.algorithams.one.week2;
 
+import java.util.Iterator;
 import java.util.Scanner;
 
 
-public class GenericLinkedStackOfStrings<Item> {
+public class GenericLinkedStackOfStrings<Item> implements Iterable<Item> {
 	
 	private Node first=null;
 	private int size=0;
@@ -28,6 +29,26 @@ public class GenericLinkedStackOfStrings<Item> {
 	public boolean isEmpty() {
 		return first==null;
 	}
+	@Override
+	public Iterator<Item> iterator() {
+		return new ListIterator();
+	}
+	public class ListIterator implements Iterator<Item>{
+		private Node current =first;
+		@Override
+		public boolean hasNext() {
+			return current!=null;
+		}
+
+		@Override
+		public Item next() {
+			Item item = current.item;
+			current=current.next;
+			return item;
+		}
+		
+	}
+
 	public static void main(String[] args) {
 		Scanner scanner=new Scanner(System.in);
 		GenericLinkedStackOfStrings<String> ss =new GenericLinkedStackOfStrings<String>();
@@ -39,4 +60,5 @@ public class GenericLinkedStackOfStrings<Item> {
 				ss.push(s);
 		}
 	}
+	
 }
