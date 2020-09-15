@@ -2,6 +2,7 @@ package com.sorting;
 
 public class MergeSort {
 	public void merge(int arr[], int l, int mid, int r) {
+		System.out.println("Left :-"+l+"Right :-"+r+"Mid :-"+mid);
 		int Ln=mid-l+1;
 		int Rn=r-mid;
 		int L[]=new int[Ln];
@@ -44,7 +45,7 @@ public class MergeSort {
 	}
 
 	public static void main(String[] args) {
-		int arr[]= {10,7,8,6,5,4};
+		int arr[]= {12,10,18,7,2};
 		MergeSort ms=new MergeSort();
 		ms.sort(arr, 0, arr.length-1);
 		for(int i:arr) {
