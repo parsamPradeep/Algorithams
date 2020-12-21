@@ -2,6 +2,7 @@ package com.algorithams;
 
 public class BinarySearch {
 	public static int binarySearch(int arr[], int key) {
+		//sorting a unsorted array
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = 0; j < arr.length - 1; j++) {
 				if (arr[i] < arr[j]) {
