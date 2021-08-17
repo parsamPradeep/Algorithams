@@ -1,4 +1,7 @@
 /.metadata/
-bin/
+/Algorithams-I/bin/
+/Algorithams-II/bin/
+/DataStructures/bin/
 /.settings/
-Servers/
+/Servers/
+/algs4/
