@@ -12,7 +12,7 @@ public class KthLargest {
 	public static void main(String[] args) {
 		int nums[]= {4,5,8,2};
 		PriorityQueue<Integer> queue =kthLargest(nums);
-		System.out.println(queue.poll());
+		//System.out.println(queue.poll());
 		queue.add(3);   // return 4
 		System.out.println(queue.poll());
 		queue.add(5);   // return 5

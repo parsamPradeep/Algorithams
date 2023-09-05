@@ -20,7 +20,7 @@ public class BalancedBinarySearchTree {
 			return 0;
 		int left=helper(root.left);
 		int right=helper(root.right);
-		if(left==-1 || right==-1 || Math.abs(left-right)>0)
+		if(left==-1 || right==-1 || Math.abs(left-right)>1)
 			return -1;
 		return Math.max(left, right)+1;
 	}

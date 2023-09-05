@@ -14,7 +14,7 @@ public class GMergeSortedArray {
         int res[]=new int[m+n];
         
         int i=0,j=0,k=0;
-        while(i<m&&j<nums2.length){
+        while(i<m&&j<n){
             if(nums1[i]<=nums2[j]){
                 res[k]=nums1[i];
                 i++;
@@ -29,7 +29,7 @@ public class GMergeSortedArray {
             i++;
             k++;
         }
-        while(j<nums2.length){
+        while(j<n){
             res[k]=nums2[j];
             j++;
             k++;

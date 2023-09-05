@@ -1,8 +1,5 @@
 package com.leetcode.card.arrays;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class QThirdMaximumNumber {
 
 	public static int thirdMax(int[] nums) {

@@ -47,6 +47,21 @@ public class CheckifOneStringSwapCanMakeStringsEqual {
         }
         return true;
     }
+	// Approach - 2
+	public static boolean areAlmostEQUAL(String s1, String s2) {
+		int diffCount = 0; int[] index = new int[2]; int k=0;
+        for(int i=0;i<s1.length();i++){
+            if(s1.charAt(i) != s2.charAt(i)){
+                diffCount++;
+                 if(diffCount > 2) return false;
+                index[k++] = i;
+            }
+        }
+        
+        return (s1.charAt(index[0]) == s2.charAt(index[1])
+            && s1.charAt(index[1]) == s2.charAt(index[0]));
+	}
+	
 	public static void main(String[] args) {
 		String s1="attack";
 		String s2="defend";

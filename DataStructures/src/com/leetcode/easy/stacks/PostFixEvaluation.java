@@ -31,7 +31,7 @@ public class PostFixEvaluation {
 		return stack.pop();
 	}
 	public static void main(String[] args) {
-		String exp="231*+9-"; 
+		String exp="3915+4911/+869-8143+/-"; 
 		System.out.println(postfixEvaluation(exp));
 
 	}

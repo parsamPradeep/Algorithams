@@ -3,13 +3,13 @@ package com.leetcode.card.arrays;
  Example 1:
 
 Input: [1,0,2,3,0,4,5,0]
-Output: null
+Output: [1,0,0,2,3,0,0,4]
 Explanation: After calling your function, the input array is modified to: [1,0,0,2,3,0,0,4]
 
 Example 2:
 
 Input: [1,2,3]
-Output: null
+Output: [1,2,3]
 Explanation: After calling your function, the input array is modified to: [1,2,3] 
  */
 import java.util.LinkedList;
@@ -79,13 +79,13 @@ public class FDuplicateZeros {
 		int nums3[] = { 1, 0, 2, 3, 0, 4, 5, 0 };
 		int res3[] = duplicateZero3(nums3);
 		for (int i : res1)
-			System.out.print(i + " ");
+			System.out.print("res1 "+ i + " ");
 		System.out.println();
 		for (int i : res2)
-			System.out.print(i + " ");
+			System.out.print("res2 " + i + " ");
 		System.out.println();
 		for (int i : res3)
-			System.out.print(i + " ");
+			System.out.print("res3 " + i + " ");
 	}
 
 }
